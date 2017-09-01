@@ -1,29 +1,45 @@
-                      ¹ØÓÚjsºÍ¸÷ÖÖ¿âÈçºÎÎªÔªËØÌí¼Ó»òÉ¾³ıclass
+ Â  Â  Â  Â  Â  Â  Â  Â  Â  Â                          ä¸ºdocumentå…ƒç´ æ·»åŠ æˆ–åˆ é™¤æŸä¸ªclasså±æ€§
 
-Ô­Éújs
-   Ìí¼Ó£º
-   ÏÖ´úä¯ÀÀÆ÷£ºdocument.getElementById(idÃû³Æ).classList.add(classÃû³Æ)£¨±¸×¢£ºÈç¹û¼ÓÈëclass²»Ö¹Ò»¸ö£¬Á½¸öclassÃû³ÆÖ®¼äÓÃ¶ººÅ¸ô¿ª¼´¿É£¬Ğ´·¨Îª£º(class1,class2,¡¤¡¤)£©
-   ¼æÈİÒÔÇ°µÄä¯ÀÀÆ÷£ºdocument.getElementById(idName).className += classÃû³Æ;£¨±¸×¢£ºÈç¹û¼ÓÈëclass²»Ö¹Ò»¸ö£¬Á½¸öclassÃû³ÆÖ®¼äÓÃ¿Õ¸ñ¸ô¿ª¼´¿É£¬Ğ´·¨Îª£º(' class1 class2')£©£¨×¢Òâ£ºÊ¹ÓÃ´Ë·½·¨Ê±£¬classÃû³ÆÇ°ÇĞ¼ÇÒª¼ÓÈëÒ»¸ö¿Õ¸ñ·ûºÅ£©
+ä¸åœ¨ä»»ä½•åŸç”Ÿåº“ä¸‹ï¼š
+æ·»åŠ 
+ Â  ç°ä»£æµè§ˆå™¨ï¼š
+       document.getElementById(idåç§°).classList.add(classåç§°)
+      ï¼ˆå¤‡æ³¨ï¼šå¦‚æœåŠ å…¥classä¸æ­¢ä¸€ä¸ªï¼Œä¸¤ä¸ªclassåç§°ä¹‹é—´ç”¨é€—å·éš”å¼€å³å¯ï¼Œå†™æ³•ä¸ºï¼š(class1,class2,Â·Â·)ï¼‰
+   
+   å…¼å®¹ä»¥å‰çš„æµè§ˆå™¨ï¼š
+       document.getElementById(idName).className += classåç§°;
+      ï¼ˆå¤‡æ³¨ï¼šå¦‚æœåŠ å…¥classä¸æ­¢ä¸€ä¸ªï¼Œä¸¤ä¸ªclassåç§°ä¹‹é—´ç”¨ç©ºæ ¼éš”å¼€å³å¯ï¼Œå†™æ³•ä¸ºï¼š(' class1 class2')ï¼‰ï¼ˆæ³¨æ„ï¼šä½¿ç”¨æ­¤æ–¹æ³•æ—¶ï¼Œclassåç§°å‰åˆ‡è®°è¦åŠ å…¥ä¸€ä¸ªç©ºæ ¼ç¬¦å·ï¼‰
 
-   É¾³ı
-   ÏÖ´úä¯ÀÀÆ÷£ºdocument.getElementById(idÃû³Æ).classList.remove(classÃû³Æ) ×¢ÒâÊÂÏîºÍÌí¼Ó·½·¨Ò»Ñù¡£
-   ¼æÈİ£º Õâ¸öÉÔÎ¢¸´ÔÓÒ»µã¡£ÕâÀïÎÒÓÃÒ»¸öº¯Êı·â×°ÆğÀ´£¬Ö÷ÒªÊÇ·½±ãÎÒ×Ô¼ºÒÔºóÊ¹ÓÃ£¡
-       var element = document.getElementById(idÃû³Æ);
-       function removeClass(element,classÃû³Æ){
-	    element.className = element.className.replace(new RegExp("(\\s|^)" + classÃû³Æ+"(\\s|^)"),'');
-	    //½«µ±Ç°µÄĞèÒªµÄÉ¾³ıµÄclassÃû³Æ´Óµ±Ç°µÄclassÊôĞÔÖµÀïÓÃÕıÔò·½·¨ÕÒ³öÀ´£¬ÓÃ¿Õ×Ö·ûÌæ»»µô£¬¾ÍÉ¾³ıÁËÕâ¸öclass
+
+åˆ é™¤
+   ç°ä»£æµè§ˆå™¨ï¼š
+      document.getElementById(idåç§°).classList.remove(classåç§°) 
+      æ³¨æ„äº‹é¡¹å’Œæ·»åŠ æ–¹æ³•ä¸€æ ·ã€‚
+      
+   å…¼å®¹ï¼š è¿™ä¸ªç¨å¾®å¤æ‚ä¸€ç‚¹ã€‚è¿™é‡Œæˆ‘ç”¨ä¸€ä¸ªå‡½æ•°å°è£…èµ·æ¥ï¼Œä¸»è¦æ˜¯æ–¹ä¾¿æˆ‘è‡ªå·±ä»¥åä½¿ç”¨ï¼
+       var element = document.getElementById(idåç§°);
+       function removeClass(element,classåç§°){
+	    element.className = element.className.replace(new RegExp("(\\s|^)" + classåç§°+"(\\s|^)"),'');
+	    //å°†å½“å‰çš„éœ€è¦çš„åˆ é™¤çš„classåç§°ä»å½“å‰çš„classå±æ€§å€¼é‡Œç”¨æ­£åˆ™æ–¹æ³•æ‰¾å‡ºæ¥ï¼Œç”¨ç©ºå­—ç¬¦æ›¿æ¢æ‰ï¼Œå°±åˆ é™¤äº†è¿™ä¸ªclass
        }
-   ÅĞ¶ÏÔªËØÊÇ·ñº¬ÓĞÄ³¸öclassµÄ·½·¨
-   Ö»ÓĞÒ»¸öclassÊ±£ºdocument.getElementById(idÃû³Æ).classList.contains(classÃû³Æ);
-                    document.getElementById(idÃû³Æ).className == classÃû³Æ£»
-                    document.getElementById(idÃû³Æ).getAttribute == classÃû³Æ£» 
-                    ÒÔÉÏÈıÖÖ·½Ê½·µ»Ø²¼¶ûÖµ
-   ÓĞ¶à¸öClassÊ±£ºvar element = document.getElementById(idÃû³Æ);
-                  if(!! element.className.match(new RegExp("(\\s|^)" + classÃû³Æ+"(\\s|^)"))){}
+       
+       
+åˆ¤æ–­å…ƒç´ æ˜¯å¦å«æœ‰æŸä¸ªclassçš„æ–¹æ³•
+ Â  documentåªæœ‰ä¸€ä¸ªclasså±æ€§æ—¶ï¼š
+           document.getElementById(idåç§°).classList.contains(classåç§°);
+           document.getElementById(idåç§°).className == classåç§°ï¼›
+           document.getElementById(idåç§°).getAttribute == classåç§°ï¼› 
+           ä»¥ä¸Šä¸‰ç§æ–¹å¼è¿”å›å¸ƒå°”å€¼
+	   
+ Â  documentæœ‰å¤šä¸ªClasså±æ€§æ—¶ï¼š
+           var element = document.getElementById(idåç§°);
+	 Â  var isClass =  element.className.match(new RegExp("(\\s|^)" + classåç§°+"(\\s|^)"));
                     
 
-JQ¿â
-    Ìí¼Ó£º
-    $(Ñ¡ÔñÆ÷).addClass(classÃû³Æ)£»
-    É¾³ı£º
-    $(Ñ¡ÔñÆ÷).removeClass(classÃû³Æ)£»
+åœ¨JQåº“ä¸‹
+ Â   æ·»åŠ ï¼š
+    $(é€‰æ‹©å™¨).addClass(classåç§°)ï¼›
+    åˆ é™¤ï¼š
+    $(é€‰æ‹©å™¨).removeClass(classåç§°)ï¼›
+ Â   åˆ¤æ–­å…ƒç´ æ˜¯å¦å«æœ‰æŸä¸ªclassçš„æ–¹æ³•:
+    $(é€‰æ‹©å™¨).hasClass(classåç§°)ï¼›
