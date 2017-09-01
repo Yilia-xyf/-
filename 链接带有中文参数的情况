@@ -1,0 +1,18 @@
+
+跳转链接时，可能会带有中文参数，在html里直接获取，可能得到的值是乱码。
+所以我们可以在js里面的到，再进行调用
+
+例：
+    var localParam = window.location.search;  //获取链接后面传递的参数
+    
+    //该函数通过一个参数名去取得参数值
+    function GetQueryString(str){
+        var rs=new RegExp("(^|)"+str+"=([^&]*)(&|$)","gi").exec(localParam),tmp;
+        if(tmp=rs){
+            return tmp[2];
+        }else{
+            return "没有这个参数";
+        }
+    }
+    
+    var one = GetQueryString(参数名)  //这样就得到了这个参数值
