@@ -1,0 +1,29 @@
+                      关于js和各种库如何为元素添加或删除class
+
+原生js
+   添加：
+   现代浏览器：document.getElementById(id名称).classList.add(class名称)（备注：如果加入class不止一个，两个class名称之间用逗号隔开即可，写法为：(class1,class2,··)）
+   兼容以前的浏览器：document.getElementById(idName).className += class名称;（备注：如果加入class不止一个，两个class名称之间用空格隔开即可，写法为：(' class1 class2')）（注意：使用此方法时，class名称前切记要加入一个空格符号）
+
+   删除
+   现代浏览器：document.getElementById(id名称).classList.remove(class名称) 注意事项和添加方法一样。
+   兼容： 这个稍微复杂一点。这里我用一个函数封装起来，主要是方便我自己以后使用！
+       var element = document.getElementById(id名称);
+       function removeClass(element,class名称){
+	    element.className = element.className.replace(new RegExp("(\\s|^)" + class名称+"(\\s|^)"),'');
+	    //将当前的需要的删除的class名称从当前的class属性值里用正则方法找出来，用空字符替换掉，就删除了这个class
+       }
+   判断元素是否含有某个class的方法
+   只有一个class时：document.getElementById(id名称).classList.contains(class名称);
+                    document.getElementById(id名称).className == class名称；
+                    document.getElementById(id名称).getAttribute == class名称； 
+                    以上三种方式返回布尔值
+   有多个Class时：var element = document.getElementById(id名称);
+                  if(!! element.className.match(new RegExp("(\\s|^)" + class名称+"(\\s|^)"))){}
+                    
+
+JQ库
+    添加：
+    $(选择器).addClass(class名称)；
+    删除：
+    $(选择器).removeClass(class名称)；
