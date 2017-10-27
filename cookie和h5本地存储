@@ -1,0 +1,80 @@
+var xyfF = {
+                /*设置客户端浏览器cookie
+                @param name  cookie名称
+                @param value cookie值
+                @param saveDay  cookie存储天数
+                */
+                setCookie:function(name, value, saveDay){
+                    var currentTime = new Date();
+                    currentTime.setDate(currentTime.getDate() + saveDay);
+                    expireDate = currentTime;  //cookie过期时间
+                    document.cookie = name + '=' + encodeURI(value) + ((saveDay == null) ? '' : ';expires=' + expireDate.toGMTString() + ';path=/');
+                }
+
+                /*获取客户端浏览器cookie
+                @param name  cookie名称
+                */
+                getCookie:function(name){
+                    if(document.cookie.length > 0;){
+                        var hasCookie = document.cookie.indexOf(name + '=');
+                        if(hasCookie > -1){
+                            var start = hasCookie + name.lenghth + 1;
+                            var end = document.cookie.indexOf(';', start);
+                            if(end == -1){
+                                end = document.cookie.length;
+                            }
+
+                            return decodeURI(document.cookie.substring(start,end));
+                        }
+                    }
+                }
+
+                /*删除某个客户端浏览器cookie
+                @param name  cookie名称
+                原理是将cookie的到期时间提前，设置为已过期
+                */
+                deleteCookie:function(name){
+                    var expireDate = new Date();
+                    expireDate.setTime(expireDate.getTime() - 1);
+                    var val = xyfF.getCookie(name);
+                    if(val){
+                        document.cookie = name + '=' + val + ';expires=' + expireDate.toGMTString();
+                    }
+                }
+
+
+                /*存储本地sessionStorage
+                @param name  存储对应的存储名称
+                @param value 存储的值
+                */
+                setStorage: function (name, value) {
+                    if (window.sessionStorage) {
+                        window.sessionStorage.setItem(name, value);
+                    }
+                },
+
+                // 获取存储的sessionStorage
+                getStorage: function (name) {
+                    if (window.sessionStorage) {
+                        return window.sessionStorage.getItem(name);
+                    }
+                },
+
+                // 删除存储的对应的sessionStorage存储
+                deleteStorage: function (name) {
+                    if (window.sessionStorage) {
+                        return window.sessionStorage.removeItem(name);
+                    }
+                },
+
+                // 清空所有的本地sessionStorage
+                clearStorage: function () {
+                    if (window.sessionStorage) {
+                        window.sessionStorage.clear();
+                    }
+                }
+                
+                //关于localStorage的方法，和sessionStorage类似，我就不贴在这里，因为我懒！
+            }
+            
+            先把我常用的方法放在这里吧，以后想到什么再添加什么好了，比如他们的一些文字说明或者其他方法！
